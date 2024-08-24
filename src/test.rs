@@ -139,6 +139,8 @@ pub fn this_host_triple() -> String {
         "aarch64"
     } else if cfg!(target_arch = "loongarch64") {
         "loongarch64"
+    } else if cfg!(all(target_arch = "powerpc64", target_endian = "little")) {
+        "powerpc64le"
     } else {
         unimplemented!()
     };
